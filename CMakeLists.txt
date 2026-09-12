@@ -23,3 +23,13 @@ add_executable(MinhaIA
 )
 
 target_link_libraries(MinhaIA PRIVATE "${TORCH_LIBRARIES}")
+
+file(GLOB TORCH_DLLS "${libtorch_SOURCE_DIR}/lib/*.dll")
+
+add_custom_command(
+    TARGET MinhaIA
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    ${TORCH_DLLS}
+    $<TARGET_FILE_DIR:MinhaIA>
+)
