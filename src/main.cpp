@@ -7,9 +7,9 @@ int main() {
     torch::Tensor a = torch::tensor({10.5, 20.2});
     torch::Tensor b = torch::tensor({2.1, 3.0});
 
-    torch::Tensor soma = a + b;
+    torch::Tensor resultado = torch::matmul(a, b);
 
-    cout << soma << endl;
+    cout << resultado << endl;
 
     return 0;
 }
