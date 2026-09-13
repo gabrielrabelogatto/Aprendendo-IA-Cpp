@@ -4,9 +4,9 @@
 using namespace std;
 
 int main() {
-    torch::Tensor numeros = torch::tensor({1.0, 2.0, 3.0});
+    torch::Tensor numeroAleatorio = torch::randn({2, 3});
 
-    cout << numeros << endl;
+    cout << numeroAleatorio << endl;
 
     return 0;
 }
