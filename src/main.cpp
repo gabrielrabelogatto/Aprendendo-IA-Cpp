@@ -4,9 +4,12 @@
 using namespace std;
 
 int main() {
-    torch::Tensor numeroAleatorio = torch::randn({2, 3});
+    torch::Tensor a = torch::tensor({10.5, 20.2});
+    torch::Tensor b = torch::tensor({2.1, 3.0});
 
-    cout << numeroAleatorio << endl;
+    torch::Tensor soma = a + b;
+
+    cout << soma << endl;
 
     return 0;
 }
