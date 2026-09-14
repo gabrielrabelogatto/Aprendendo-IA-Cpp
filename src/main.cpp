@@ -4,10 +4,12 @@
 using namespace std;
 
 int main() {
-    torch::Tensor entrada = torch::tensor({10});
-    torch::Tensor peso = torch::tensor({0.5});
+    torch::Tensor entrada = torch::tensor({10, 5});
+    torch::Tensor peso = torch::tensor({0.5, 0.2});
 
-    torch::Tensor saida = entrada * peso;
+    torch::Tensor resultado = entrada * peso;
+
+    torch::Tensor saida = resultado.sum();
 
     cout << saida << endl;
 
