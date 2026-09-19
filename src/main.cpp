@@ -4,21 +4,11 @@
 using namespace std;
 
 int main() {
+    torch::Tensor valor = torch::tensor({-5.0, 2.0, -1.0, 8.0});
 
-    torch::Tensor entrada = torch::tensor({3.0, 5.0});
-    torch::Tensor peso = torch::tensor({-2.0, 1.0});
+    torch::Tensor resultado = torch::relu(valor);
 
-    torch::Tensor bias = torch::tensor({3.0});
-
-    torch::Tensor saida = (entrada * peso).sum() + bias;
-
-    cout << "Saida: " << saida.item<float>() << endl;
-
-    if(saida.item<float>() > 0) {
-        cout << "Pular" << endl;
-    } else {
-        cout << "Não pular" << endl;
-    }
+    cout << resultado << endl;
 
     return 0;
 }
